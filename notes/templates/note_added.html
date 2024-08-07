@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Note Saved!</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Your note has been saved!</h1>
+        <p>Your note is stored with note ID - <strong>{{ note_id }}</strong></p>
+        <a href="{% url 'list_notes' %}">
+            <button type="button" class="button">See All My Notes</button>
+        </a>
+    </div>
+</body>
+</html>
