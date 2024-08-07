@@ -22,6 +22,16 @@ source venv/bin/activate
 Install Dependencies- 
 pip install -r requirements.txt
 
+_____________________________________________________________________
+on the database server (can be same local machine) run below commands to create database and make note of database url. same update in the .env file afterwards. 
+keep .env file in gitignore for security purpose. here I have kept it open for your reference. 
+
+CREATE DATABASE mydatabase;
+CREATE USER 'mydatabaseuser'@'%' IDENTIFIED BY 'mypassword';
+GRANT ALL PRIVILEGES ON mydatabase.* TO 'mydatabaseuser'@'%';
+FLUSH PRIVILEGES;
+____________________________________________________________________
+
 Run Migrations- 
 python manage.py migrate
 
