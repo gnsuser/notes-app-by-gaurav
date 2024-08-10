@@ -2,16 +2,15 @@
 
 This is a simple Django application for creating, viewing, and searching notes.
 
-## Installation
+## Installation on local dev environment (windows/linux/macos) 
 
 ### Prerequisites
 
 - Python 3.x
-- Django 3.x or higher
+- mysql instance running (locally or remotely) 
 
 ### Clone the Repository
 
-```bash
 git clone https://github.com/gnsuser/notes-app-by-gaurav
 cd django-notes-app
 
@@ -43,3 +42,22 @@ python manage.py runserver
 
 Access the Application
 Open your browser and navigate to http://127.0.0.1:8000/.
+
+______________________________________________________________________________________________________________________
+
+## Installation on docker container environment (windows/linux/macos)  <here I have gave commands for ubuntu base machine> 
+
+### Prerequisites
+
+- Python 3.x
+- docker
+- mysql instance running ( locally or remotely)
+
+**create docker image> 
+
+command >>> docker build -t notes_app_by_gaurav .
+
+** create container
+command >>>> docker run -d --env-file .env -p 5000:8000 --name my-django-app-container28 notes_app_by_gaurav_final
+
+
