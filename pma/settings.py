@@ -79,10 +79,9 @@ WSGI_APPLICATION = 'pma.wsgi.application'
 load_dotenv()
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default=os.getenv('DATABASE_URL', 'mysql://mydatabaseuser:mypassword@localhost:3306/mydatabase')
-    )
+    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
 }
+
 
 
 # Password validation
