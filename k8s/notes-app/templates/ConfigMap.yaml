@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: notes-app-config
+data:
+  DATABASE_URL: {{ .Values.env.DATABASE_URL }}
+
