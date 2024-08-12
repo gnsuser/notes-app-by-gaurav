@@ -1,2 +1,28 @@
+# Exclude the virtual environment directory
+venv/
+.venv/
+
+#excude environment variable file inside the container also gitignore file
 .env
+.gitignore 
+
+# Exclude Python bytecode files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Exclude Git repository files
+.git/
+
+# Exclude documentation and other non-essential files
 README.md
+
+# Exclue the kubernetes manifest files. as its not required inside the container 
+k8s/
+
+#exclude dockerfile as well because there is no need of it inside container
+dockerfile
+.dockerignore
+
+

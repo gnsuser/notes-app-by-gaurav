@@ -1,0 +1,31 @@
+replicaCount: 3
+
+image:
+  repository: gauravsurnis/notes-app-by-gaurav
+  tag: latest
+
+env:
+  DATABASE_URL: mysql://mydatabaseuser:mypassword@172.24.154.73:3306/mydatabase
+
+resources:
+  limits:
+    memory: "200Mi"
+    cpu: "600m"
+
+ingress:
+  host: notes-app.local
+
+serviceAccount:
+  create: true
+  name: ""
+
+service:
+  type: NodePort
+  port: 8000
+
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 3
+  targetCPUUtilizationPercentage: 80
